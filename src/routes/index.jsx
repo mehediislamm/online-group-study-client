@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             path:'/updateassignment/:id',
             element:<UpdateAssignment></UpdateAssignment>,
             loader:({params})=> {
-              console.log(params);
+              // console.log(params);
                    return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
              
             }
