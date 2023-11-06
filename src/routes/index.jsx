@@ -7,6 +7,8 @@ import Home from "../page/home/Home";
 import CreateAssignment from "../page/createAssignment/CreateAssignment";
 import Assignments from "../page/assignments/Assignments";
 import UpdateAssignment from "../page/updateAssignment/UpdateAssignment";
+import Details from "../page/details/Details";
+// import FeaturCards from "../page/featurCards/FeaturCards";
 
 
 
@@ -19,9 +21,16 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader:()=> fetch("http://localhost:5000/api/v1/features-cards")
             
         },
+        // {
+        //     path:'/featurcards',
+        //     element:<FeaturCards></FeaturCards>,
+        //     loader:()=> fetch("http://localhost:5000/api/v1/features-cards")
+            
+        // },
         {
             path:'createassignment',
             element:<CreateAssignment></CreateAssignment> 
@@ -29,6 +38,15 @@ const router = createBrowserRouter([
         {
             path:'/updateassignment/:id',
             element:<UpdateAssignment></UpdateAssignment>,
+            loader:({params})=> {
+              // console.log(params);
+                   return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
+             
+            }
+        },
+        {
+            path:'/details/:id',
+            element:<Details></Details>,
             loader:({params})=> {
               // console.log(params);
                    return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
