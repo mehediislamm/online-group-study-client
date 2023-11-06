@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* {
             user? <li><NavLink to={'/submittedassignments'}> Submitted Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/submittedassignments'}> Submitted Assignments</NavLink></li>
         } */}
-        <li><NavLink to={'/submittedassignments'}> Submitted Assignments</NavLink></li>
+        <li><NavLink to={'/submitedassignment'}> Submitted Assignments</NavLink></li>
 
     </>
     return (

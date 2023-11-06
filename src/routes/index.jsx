@@ -9,6 +9,8 @@ import Assignments from "../page/assignments/Assignments";
 import UpdateAssignment from "../page/updateAssignment/UpdateAssignment";
 import Details from "../page/details/Details";
 import SubmitedFrom from "../page/submittedFrom/SubmitedFrom";
+import SubmitedAssignment from "../page/submitedAssignment/SubmitedAssignment";
+import MyAssignment from "../page/myAssignment/MyAssignment";
 // import FeaturCards from "../page/featurCards/FeaturCards";
 
 
@@ -26,12 +28,7 @@ const router = createBrowserRouter([
             loader:()=> fetch("http://localhost:5000/api/v1/features-cards")
             
         },
-        // {
-        //     path:'/featurcards',
-        //     element:<FeaturCards></FeaturCards>,
-        //     loader:()=> fetch("http://localhost:5000/api/v1/features-cards")
-            
-        // },
+        
         {
             path:'createassignment',
             element:<CreateAssignment></CreateAssignment> 
@@ -62,7 +59,18 @@ const router = createBrowserRouter([
         {
             path:'submitedfrom',
             element:<SubmitedFrom></SubmitedFrom>
-        }
+        },
+        {
+            path:'submitedassignment',
+            element:<SubmitedAssignment></SubmitedAssignment>,
+            loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
+        },
+        {
+            path:'myassignment',
+            element:<MyAssignment></MyAssignment>,
+            loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
+        },
+
       ]
     },
     {

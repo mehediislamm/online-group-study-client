@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import swal from "sweetalert";
@@ -10,8 +11,9 @@ const SubmitedFrom = () => {
         const pdf = form.pdf.value;
         const textarea = form.textarea.value;
         const email = user?.email;
+        const status= "pending"
         const submited = {
-            pdf, textarea, email
+            status, pdf, textarea, email,  
         }
         fetch('http://localhost:5000/api/v1/submited-assignments', {
             method: 'POST',
