@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const AdminLayout = () => {
     return (
-        <div>
+        <div className=" max-w-[1450px] mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

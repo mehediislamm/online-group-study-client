@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const Details = () => {
@@ -17,7 +17,7 @@ const Details = () => {
                         <h1 className="text-xl font-serif"> difficulty-level: {level}</h1>
                     </div>
                     <div className="card-actions justify-center">
-                        <button className="btn btn-primary mb-5">Take assignment</button>
+                        <Link to={'/submitedfrom'}><button className="btn btn-primary mb-5">Take assignment</button></Link>
                     </div>
                 </div>
             </div>

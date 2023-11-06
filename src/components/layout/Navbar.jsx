@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext, } from "react";
 import userDefoultPic from '../../assets/user.png'
-import logo from '../../assets/logo3.png'
+import logo from '../../assets/logo.jpg'
 import { AuthContext } from "../../provider/AuthProvider";
 
 

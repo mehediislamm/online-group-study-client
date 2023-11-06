@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import swal from "sweetalert";
+import { AuthContext } from "../../provider/AuthProvider";
+
 
 const CreateAssignment = () => {
+    const { user} = useContext(AuthContext);
     const createassignment = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -9,8 +13,9 @@ const CreateAssignment = () => {
         const marks = form.marks.value;
         const image = form.image.value;
         const level = form.level.value;
+        const email = user?.email;
         const createData = {
-            title, description, marks, image, level
+            title, description, marks, image, level,email
         }
 
         fetch("http://localhost:5000/api/v1/create-assignments", {
