@@ -11,7 +11,7 @@ import Details from "../page/details/Details";
 import SubmitedFrom from "../page/submittedFrom/SubmitedFrom";
 import SubmitedAssignment from "../page/submitedAssignment/SubmitedAssignment";
 import MyAssignment from "../page/myAssignment/MyAssignment";
-// import FeaturCards from "../page/featurCards/FeaturCards";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -31,11 +31,11 @@ const router = createBrowserRouter([
         
         {
             path:'createassignment',
-            element:<CreateAssignment></CreateAssignment> 
+            element:<PrivateRoute><CreateAssignment></CreateAssignment> </PrivateRoute>
         },
         {
             path:'/updateassignment/:id',
-            element:<UpdateAssignment></UpdateAssignment>,
+            element:<PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
             loader:({params})=> {
               // console.log(params);
                    return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/details/:id',
-            element:<Details></Details>,
+            element:<PrivateRoute><Details></Details></PrivateRoute>,
             loader:({params})=> {
               // console.log(params);
                    return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
@@ -56,10 +56,21 @@ const router = createBrowserRouter([
             element:<Assignments></Assignments> ,
             loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
         },
+     
         {
-            path:'submitedfrom',
-            element:<SubmitedFrom></SubmitedFrom>
+            path:'/submitedfrom',
+            element:<SubmitedFrom></SubmitedFrom>,
+            loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
         },
+        // {
+        //     path:'/submitedfrom/:id',
+        //     element:<SubmitedFrom></SubmitedFrom>,
+        //     loader:({params})=> {
+        //         console.log(params);
+        //              return fetch(`http://localhost:5000/api/v1/all-assignment/${params.id}`)
+               
+        //       }
+        // },
         {
             path:'submitedassignment',
             element:<SubmitedAssignment></SubmitedAssignment>,
@@ -68,7 +79,7 @@ const router = createBrowserRouter([
         {
             path:'myassignment',
             element:<MyAssignment></MyAssignment>,
-            loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
+            loader:()=>fetch('http://localhost:5000/api/v1/all-assignment')
         },
 
       ]

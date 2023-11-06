@@ -8,7 +8,7 @@ import { useContext, useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 import swal from 'sweetalert';
-import loggedImage from '../../assets/login-bg.jpg'
+import loggedImage from '../../assets/login.jpg'
 import { AuthContext } from "../../provider/AuthProvider";
 import app from "../../config/firebase.config";
 

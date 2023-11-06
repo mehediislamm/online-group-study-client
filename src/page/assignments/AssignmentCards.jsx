@@ -1,8 +1,30 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
-const AssignmentCards = ({ allAssignment }) => {
+const AssignmentCards = ({ allAssignment, allAssignments, setUpdate }) => {
+    const handleDelete = (_id) => {
+
+
+        fetch(`http://localhost:5000/api/v1/all-assignment/${_id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+
+                const filterdata = allAssignments.filter((item) => item._id !== _id);
+                setUpdate(filterdata)
+
+                if (data.deletedCount > 0) {
+                   
+                    swal("Delete!", "Delete assignment Successfull", "error");
+                }
+            });
+    }
+
+
     const { _id, title,  marks, image, level } = allAssignment;
     return (
         <div>
@@ -19,7 +41,7 @@ const AssignmentCards = ({ allAssignment }) => {
                         </div>
                     </div>
                     <div className="flex justify-center mb-3">
-                        <button className="btn btn-accent">Delete</button>
+                        <button onClick={()=> handleDelete(allAssignment._id)} className="btn btn-accent">Delete</button>
                     </div>
                     
                     <div className="flex justify-between">

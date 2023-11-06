@@ -4,6 +4,8 @@ import { AuthContext } from "../../provider/AuthProvider";
 import swal from "sweetalert";
 
 const SubmitedFrom = () => {
+//    const allAssignment = useLoaderData;
+//    console.log(allAssignment);
     const { user } = useContext(AuthContext);
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,7 +37,7 @@ const SubmitedFrom = () => {
             <form onSubmit={handleSubmit} className=" ">
                 <div className="md:flex mb-8 gap-5 ml ">
 
-                    <div className="form-control w-80 md:ml-64 lg:ml-[500px]">
+                    <div className="form-control ml-20 w-80 md:ml-64 lg:ml-[500px]">
                         <label className="label">
                             <span className="label-text">PDG link</span>
                         </label>
@@ -46,7 +48,7 @@ const SubmitedFrom = () => {
                 </div>
 
                 <div className="mb-6 ">
-                    <div className=" form-control md:ml-64 lg:64 lg:ml-[500px]">
+                    <div className=" form-control ml-20 md:ml-64 lg:64 lg:ml-[500px]">
                         <label className="label">
                             <span className="label-text">TEXT area</span>
                         </label>
@@ -55,7 +57,7 @@ const SubmitedFrom = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="assignment submission" className=" text-white bg-slate-700 btn btn-block" />
+                <input type="submit" value="assignment submission" className=" text-white bg-slate-700 btn btn-neutral ml-32 md:ml-80 lg:ml-[552px]" />
 
             </form>
         </div>

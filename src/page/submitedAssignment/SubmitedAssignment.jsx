@@ -3,7 +3,7 @@ import SubmitedAssignments from "./SubmitedAssignments";
 
 const SubmitedAssignment = () => {
     const assignments = useLoaderData();
-    // console.log(assignment);
+    // console.log(assignments);
     return (
         <div>
             {
