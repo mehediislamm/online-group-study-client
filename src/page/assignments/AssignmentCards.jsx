@@ -3,7 +3,7 @@
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
-const AssignmentCards = ({ allAssignment, allAssignments, setUpdate }) => {
+const AssignmentCards = ({ allAssignment, update, setUpdate }) => {
     const handleDelete = (_id) => {
 
 
@@ -14,7 +14,7 @@ const AssignmentCards = ({ allAssignment, allAssignments, setUpdate }) => {
             .then((data) => {
                 console.log(data);
 
-                const filterdata = allAssignments.filter((item) => item._id !== _id);
+                const filterdata = update.filter((item) => item._id !== _id);
                 setUpdate(filterdata)
 
                 if (data.deletedCount > 0) {
@@ -28,7 +28,7 @@ const AssignmentCards = ({ allAssignment, allAssignments, setUpdate }) => {
     const { _id, title,  marks, image, level } = allAssignment;
     return (
         <div>
-            <div className="card h-[132vh]  bg-base-100 shadow-xl">
+            <div className="card h-[100vh]  bg-base-100 shadow-xl">
                 <figure><img className=" h-[72vh]" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold ">

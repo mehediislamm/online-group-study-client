@@ -2,21 +2,27 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import swal from "sweetalert";
+import { useLoaderData } from "react-router-dom";
 
 const SubmitedFrom = () => {
-//    const allAssignment = useLoaderData;
-//    console.log(allAssignment);
+   const allassignment = useLoaderData();
+   
+// console.log(allassignment);
     const { user } = useContext(AuthContext);
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const pdf = form.pdf.value;
-        const textarea = form.textarea.value;
-        const email = user?.email;
+        const textarea = form.textarea.value; 
+        const email = user?.email;  
         const status= "pending"
+        const title = `${allassignment?.title}`;
+        const name = `${user?.displayName}`
+        const marks = `${allassignment?.marks}`
         const submited = {
-            status, pdf, textarea, email,  
+            status, pdf, textarea, email, name, title, marks
         }
+       
         fetch('http://localhost:5000/api/v1/submited-assignments', {
             method: 'POST',
             headers: {
@@ -42,7 +48,7 @@ const SubmitedFrom = () => {
                             <span className="label-text">PDG link</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="pdf" placeholder="PDG link" className="input w-full input-bordered" />
+                            <input type="text" name="pdf"  placeholder="PDG link" className="input w-full input-bordered" />
                         </label>
                     </div>
                 </div>

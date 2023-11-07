@@ -1,31 +1,47 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 
-const MyAssignmentCard = ({allAssignment: myassignment}) => {
-    const { _id, title,  marks, image, level } = myassignment;
+const MyAssignmentCard = ({myassignment}) => {
+    const { status,title , name , marks } = myassignment;
     return (
-        <div>
-            <div className="card h-[132vh]  bg-base-100 shadow-xl">
-                <figure><img className=" h-[72vh]" src={image} alt="Shoes" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title text-2xl font-bold ">
-                        {title}
-                    </h2>
-                    <div className="card-actions justify-between my-5 mb-5">
-                        <p className="text-xl font-serif "> difficulty-level: {level}</p>
-                        <div>
-                            <p className="text-xl font-serif">Marks: {marks}</p>
-                        </div>
-                    </div>
-                    <div className="flex justify-center mb-3">
-                        <button className="btn btn-accent">Delete</button>
-                    </div>
-                    
-                    <div className="flex justify-between">
-                        <Link to={`/details/${_id}`}><button className="btn btn-error">View Assignment</button></Link>
-                       <Link to={`/updateassignment/${_id}`}> <button className="btn btn-error">Update Assignment</button></Link>
-                    </div>
-                </div>
+        <div className="">
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                           
+                            <th className="text-xl">Name</th>
+                            <th className="text-xl">title</th>
+                            <th className="text-xl">status</th>
+                            <th className="text-xl">total mark</th>
+                            <th className="text-xl">mark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* row 1 */}
+                        <tr>
+                           
+                            <td>
+                                <div className="flex items-center space-x-3">
+                                   
+                                    <div>
+                                        <div className="font-bold">{name}</div>
+                                        
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                               {title}
+                            </td>
+                            <td>{status}</td>
+                            <td>{marks}</td>
+                            
+                        </tr>
+                       
+                    </tbody>
+                  
+
+                </table>
             </div>
         </div>
     );

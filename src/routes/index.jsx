@@ -54,43 +54,41 @@ const router = createBrowserRouter([
         {
             path:'assignments',
             element:<Assignments></Assignments> ,
-            loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
+            // loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
         },
      
+    
         {
-            path:'/submitedfrom',
+            path:'/submitedfrom/:id',
             element:<SubmitedFrom></SubmitedFrom>,
-            loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
-        },
-        // {
-        //     path:'/submitedfrom/:id',
-        //     element:<SubmitedFrom></SubmitedFrom>,
-        //     loader:({params})=> {
-        //         console.log(params);
-        //              return fetch(`http://localhost:5000/api/v1/all-assignment/${params.id}`)
+            loader:({params})=> {
+                console.log(params);
+                     return fetch(`http://localhost:5000/api/v1/all-assignment/${params.id}`)
                
-        //       }
-        // },
+              }
+        },
+       
         {
-            path:'submitedassignment',
+            path:'submittedassignment',
             element:<SubmitedAssignment></SubmitedAssignment>,
             loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
         },
         {
             path:'myassignment',
-            element:<MyAssignment></MyAssignment>,
-            loader:()=>fetch('http://localhost:5000/api/v1/all-assignment')
+            element:<PrivateRoute><MyAssignment></MyAssignment></PrivateRoute>,
+            // loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
         },
+        {
+            path:'/login',
+            element:<Login></Login>
+        },
+        {
+            path:'/register',
+            element:<Register></Register>
+        }
 
       ]
     },
-    {
-        path:'/login',
-        element:<Login></Login>
-    },
-    {
-        path:'/register',
-        element:<Register></Register>
-    }
+    
   ]);
   export default router;

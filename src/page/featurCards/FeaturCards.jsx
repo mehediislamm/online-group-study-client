@@ -8,7 +8,7 @@ const FeaturCards = ({ card }) => {
     return (
         <div>
             <div >
-                <div className="card rounded-xl h-72  bg-base-100 shadow-xl">
+                <div className="card rounded-xl h-72  bg-base-100 shadow-xl" data-aos="zoom-in">
                     
                     <figure><img  className="h-72 w-full" src={image_url} alt="Shoes" /></figure>
                 </div>

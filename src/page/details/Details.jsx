@@ -3,7 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
     const details = useLoaderData();
-    const { _id,title, description, marks, image, level } = details;
+    
+    const { _id, title, description, marks, image, level } = details;
 
     return (
         <div>
@@ -17,8 +18,8 @@ const Details = () => {
                         <h1 className="text-xl font-serif mr-4"> difficulty-level: {level}</h1>
                     </div>
                     <div className="card-actions justify-center">
-                        {/* <Link to={`/submitedfrom/${_id}`}><button className="btn btn-primary mb-5">Take assignment</button></Link> */}
-                        <Link to={'/submitedfrom'}><button className="btn btn-primary mb-5">Take assignment</button></Link>
+                        <Link to={`/submitedfrom/${_id}`}><button className="btn btn-primary mb-5">Take assignment</button></Link>
+                        {/* <Link to={'/submitedfrom'}><button className="btn btn-primary mb-5">Take assignment</button></Link> */}
                     </div>
                 </div>
             </div>

@@ -27,28 +27,23 @@ const Navbar = () => {
         {
             user ? <li className=" hidden"><NavLink to={'/login'}>Login</NavLink></li>: <li><NavLink to={'/login'}>Login</NavLink></li>
         }
-        {/* <li><NavLink to={'/login'}>Login</NavLink></li> */}
         {
             user? <li className=" hidden"><NavLink to={'/register'}>Register</NavLink></li>: <li><NavLink to={'/register'}>Register</NavLink></li>
         }
-        {/* <li><NavLink to={'/register'}>Register</NavLink></li> */}
 
         {
             user? <li><NavLink to={'/createassignment'}>Create Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/createassignment'}>Create Assignments</NavLink></li>
         }
-        {/* <li><NavLink to={'/createassignment'}>Create Assignments</NavLink></li> */}
        {
         user?  <li><NavLink to={'/myassignment'}>My Assignment</NavLink></li>:  <li className="hidden"><NavLink to={'/myassignment'}>My Assignment</NavLink></li>
        }
-       {/* <li><NavLink to={'/myassignment'}>My Assignment</NavLink></li> */}
         {
-            user? <li><NavLink to={'/submittedassignments'}> Submitted Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/submittedassignments'}> Submitted Assignments</NavLink></li>
+            user? <li><NavLink to={'/submittedassignment'}> Submitted Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/submittedassignment'}> Submitted Assignments</NavLink></li>
         }
-        {/* <li><NavLink to={'/submitedassignment'}> Submitted Assignments</NavLink></li> */}
 
     </>
     return (
-        <div className="navbar  mb-14 bg-[#F7E4DF] rounded-xl">
+        <div className="navbar  mb-14 bg-[#e2a291] rounded-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

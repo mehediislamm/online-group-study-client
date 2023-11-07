@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 import loggedImage from '../../assets/login.jpg'
 import { AuthContext } from "../../provider/AuthProvider";
 import app from "../../config/firebase.config";
+import axios from "axios";
 
 
 
@@ -38,7 +39,9 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
-                console.log(result.user);
+                const loogedInUser = result.user;
+                console.log(loogedInUser);
+                const user = {email};
 
                 setSuccess(swal({
                     title: "Good job!",
@@ -47,7 +50,18 @@ const Login = () => {
                     button: "Aww yiss!",
                 }))
 
-                navigate(location?.state ? location.state : '/');
+                
+
+                // get access token
+                axios.post('http://localhost:5000/jwt',user,{
+                    withCredentials:true
+                })
+                .then(res => {
+                    console.log(res.data);
+                    if(res.data.success){
+                        navigate(location?.state ? location.state : '/');
+                    }
+                })
             })
             .catch(error => {
                 console.error(error);
@@ -58,7 +72,21 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
-            .then(result => { console.log(result.user) })
+            .then(result => { console.log(result.user) 
+                setSuccess(swal({
+                    title: "Good job!",
+                    text: "login success!",
+                    icon: "success",
+                    button: "Aww yiss!",
+                }))
+
+                navigate(location?.state ? location.state : '/');
+                // access token
+                
+                
+            
+            })
+            
             .catch(error => { console.error(error) })
 
     }

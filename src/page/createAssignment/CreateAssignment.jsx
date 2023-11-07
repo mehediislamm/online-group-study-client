@@ -49,7 +49,7 @@ const CreateAssignment = () => {
                                 <span className="label-text">Title</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="title" placeholder="title" className="input w-full input-bordered" />
+                                <input type="text" name="title"  placeholder="title" className="input w-full input-bordered" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2">

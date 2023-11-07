@@ -1,8 +1,9 @@
 
 const Qustion = () => {
     return (
-        <div className="lg:h-full">
-            <div className="collapse h-32 collapse-arrow bg-base-200">
+        <div className="lg:h-full" data-aos="fade-up"
+        data-aos-duration="3000" >
+            <div className="collapse h-32 collapse-arrow bg-base-200" >
                 <input type="radio" name="my-accordion-2" checked="checked" />
                 <div className="collapse-title text-xl font-medium">
                 What are the benefits of participating in online group study sessions?

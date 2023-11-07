@@ -6,7 +6,7 @@ import sideimg from '../../assets/section.jpg.png'
 
 const Home = () => {
     const cards = useLoaderData();
-    console.log(cards);
+    // console.log(cards);
     return (
         <div>
             <Banner />
@@ -21,7 +21,8 @@ const Home = () => {
                 <div className="lg:h-full">
                     <Qustion></Qustion>
                 </div>
-                <div>
+                <div data-aos="fade-up"
+     data-aos-duration="3000">
                     <img className="md:h-full" src={sideimg} alt="" />
                 </div>
             </div>
