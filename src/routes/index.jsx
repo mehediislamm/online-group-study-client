@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         {
             path:'assignments',
             element:<Assignments></Assignments> ,
-            // loader: ()=> fetch("http://localhost:5000/api/v1/all-assignment")
+            loader: ()=> fetch("http://localhost:5000/api/v1/assignmentCount")
         },
      
     
