@@ -70,7 +70,7 @@ const Navbar = () => {
 
                 </label>
                     {
-                        user ? <h1>{user.displayName}</h1>: null
+                        user ? <h1 className="font-bold">{user.displayName}</h1>: null
                     }
 
                 {
