@@ -104,7 +104,7 @@ const Login = () => {
                         </label>
                         <input type="email" name="email" placeholder="email" className="input input-bordered w-72" required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control ml-5">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
