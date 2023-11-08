@@ -27,9 +27,9 @@ const AssignmentCards = ({ allAssignment, update, setUpdate }) => {
 
     const { _id, title,  marks, image, level } = allAssignment;
     return (
-        <div data-aos="fade-up"
+        <div className="bg-yellow-400" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
-            <div className="card h-[100vh]  bg-base-100 shadow-xl">
+            <div className=" bg-yellow-400 card h-[100vh]  bg-base-100 shadow-xl">
                 <figure><img className=" h-[72vh]" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold ">
