@@ -98,7 +98,7 @@ const Login = () => {
             <div >
                 <h2 className="text-3xl text-center pt-5 font-bold text-yellow-800 ">Please Login</h2>
                 <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto mb-3">
-                    <div className="form-control">
+                    <div className="form-control ml-5">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
