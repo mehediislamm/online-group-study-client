@@ -18,7 +18,7 @@ const CreateAssignment = () => {
             title, description, marks, image, level,email
         }
 
-        fetch("http://localhost:5000/api/v1/create-assignments", {
+        fetch("https://online-group-study.vercel.app/api/v1/create-assignments", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

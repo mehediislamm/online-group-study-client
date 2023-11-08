@@ -9,7 +9,7 @@ const MyAssignment = () => {
     const [myAssignment, setmyAssignment] = useState([]);
     const {user} = useContext(AuthContext);
     // console.log(myassignments);
-    const url = `http://localhost:5000/api/v1/submited-all-assignment?email=${user?.email}`
+    const url = `https://online-group-study.vercel.app/api/v1/submited-all-assignment?email=${user?.email}`
     useEffect(() => {
 
         axios.get(url, { withCredentials: true })

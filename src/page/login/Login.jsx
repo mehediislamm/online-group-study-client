@@ -53,13 +53,13 @@ const Login = () => {
                 
 
                 // get access token
-                axios.post('http://localhost:5000/jwt',user,{
+                axios.post('https://online-group-study.vercel.app/jwt',user,{
                     withCredentials:true
                 })
                 .then(res => {
                     console.log(res.data);
                     if(res.data.success){
-                        navigate(location?.state ? location.state : '/');
+                        navigate(location?.state ? location.state :'/');
                     }
                 })
             })
@@ -92,7 +92,7 @@ const Login = () => {
     }
 
     return (
-        // className="hero min-h-screen" style={{ backgroundImage: `url(${banner}
+        
 
         <div className="hero min-h-screen mb-10" style={{ backgroundImage: `url(${loggedImage})` }}>
             <div >

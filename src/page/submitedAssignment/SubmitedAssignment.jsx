@@ -7,7 +7,7 @@ const SubmitedAssignment = () => {
 
     const handelComplite = id=>{
 
-        fetch(`http://localhost:5000/api/v1/submited-all-assignment/${id}`,{
+        fetch(`https://online-group-study.vercel.app/api/v1/submited-all-assignment/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'

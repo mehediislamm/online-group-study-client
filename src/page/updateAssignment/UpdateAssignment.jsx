@@ -16,7 +16,7 @@ const UpdateAssignment = () => {
         const updateData = {
             title, description, marks, image, level, date
         }
-        fetch(`http://localhost:5000/api/v1/update-assignment/${singleAssignment._id}`, {
+        fetch(`https://online-group-study.vercel.app/api/v1/update-assignment/${singleAssignment._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

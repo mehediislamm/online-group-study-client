@@ -53,25 +53,37 @@ const Register = () => {
         <div className="bg-[#e5e9ee] rounded-xl">
             <h2 className="text-3xl text-center pt-5 font-bold text-yellow-600">Please Register</h2>
             <form onSubmit={handleRegister} className="md:w-3/4 lg:w-1/2 mx-auto mb-3">
-                <div className="form-control">
+                <div className="form-control" data-aos="fade-up"
+     data-aos-anchor-placement="bottom-bottom">
                     <label className="label">
                         <span className="label-text">Name</span>
                     </label>
                     <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
+                >
                     <label className="label">
                         <span className="label-text">Photo URL</span>
                     </label>
                     <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
+                
+                >
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
                     <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom"
+
+                >
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
@@ -81,7 +93,11 @@ const Register = () => {
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control mt-6"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
+                
+                >
                     <button className="btn btn-primary">Register</button>
                 </div>
             </form>
