@@ -29,16 +29,16 @@ const AssignmentCards = ({ allAssignment, update, setUpdate }) => {
     return (
         <div className="bg-yellow-400" data-aos="fade-up"
         data-aos-anchor-placement="top-bottom">
-            <div className=" bg-yellow-400 card h-[100vh]  bg-base-100 shadow-xl">
+            <div className=" bg-yellow-400 card h-[100vh]   shadow-xl">
                 <figure><img className=" h-[72vh]" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl font-bold ">
                         {title}
                     </h2>
                     <div className="card-actions justify-between my-5 mb-5">
-                        <p className="text-xl font-serif "> difficulty-level: {level}</p>
+                        <p className="text-xl font-serif font-bold "> level: {level}</p>
                         <div>
-                            <p className="text-xl font-serif">Marks: {marks}</p>
+                            <p className="text-xl font-serif font-bold">Marks: {marks}</p>
                         </div>
                     </div>
                     <div className="flex justify-center mb-3">
