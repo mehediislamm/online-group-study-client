@@ -127,7 +127,7 @@ const Login = () => {
                 </div>
 
                 <div className="divider mx-auto w-1/2">OR</div>
-                <div className="flex mb-5 mr-10 md:ml-14 lg:ml-28 gap-5 justify-center">
+                <div className="flex mb-5 ml-5 md:ml-14 lg:ml-28 gap-5 justify-center">
                     <button className="btn w-32 ">
                         <FaGithub></FaGithub>
                         GITHUB</button>
