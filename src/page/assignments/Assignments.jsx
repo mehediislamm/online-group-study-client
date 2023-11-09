@@ -1,16 +1,14 @@
 import AssignmentCards from "./AssignmentCards";
 import {  useEffect, useState } from "react";
 import axios from "axios"
-import { useLoaderData } from "react-router-dom";
 
 
 const Assignments = () => {
     const [ update, setUpdate] = useState([])
 
-    const totalCount = useLoaderData()
-    console.log(totalCount);
+   
     
-    const url = `https://online-group-study.vercel.app/api/v1/all-assignment`
+    const url = `http://localhost:5000/api/v1/all-assignment`
     useEffect(()=>{
 
        axios.get(url, )

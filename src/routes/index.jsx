@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element: <Home></Home>,
-            loader:()=> fetch("https://online-group-study.vercel.app/api/v1/features-cards")
+            loader:()=> fetch("http://localhost:5000/api/v1/features-cards")
             
         },
         
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
             loader:({params})=> {
               // console.log(params);
-                   return fetch(`https://online-group-study.vercel.app/api/v1/update-assignment/${params.id}`)
+                   return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
              
             }
         },
@@ -47,14 +47,13 @@ const router = createBrowserRouter([
             element:<PrivateRoute><Details></Details></PrivateRoute>,
             loader:({params})=> {
               // console.log(params);
-                   return fetch(`https://online-group-study.vercel.app/api/v1/update-assignment/${params.id}`)
+                   return fetch(`http://localhost:5000/api/v1/update-assignment/${params.id}`)
              
             }
         },
         {
             path:'assignments',
             element:<Assignments></Assignments> ,
-            loader: ()=> fetch("https://online-group-study.vercel.app/api/v1/assignmentCount")
         },
      
     
@@ -62,8 +61,8 @@ const router = createBrowserRouter([
             path:'/submitedfrom/:id',
             element:<SubmitedFrom></SubmitedFrom>,
             loader:({params})=> {
-                console.log(params);
-                     return fetch(`https://online-group-study.vercel.app/api/v1/all-assignment/${params.id}`)
+                // console.log(params);
+                     return fetch(`http://localhost:5000/api/v1/all-assignment/${params.id}`)
                
               }
         },
@@ -71,12 +70,12 @@ const router = createBrowserRouter([
         {
             path:'submittedassignment',
             element:<SubmitedAssignment></SubmitedAssignment>,
-            loader:()=>fetch('https://online-group-study.vercel.app/api/v1/submited-all-assignment')
+            loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
         },
         {
             path:'myassignment',
             element:<PrivateRoute><MyAssignment></MyAssignment></PrivateRoute>,
-            // loader:()=>fetch('https://online-group-study.vercel.app/api/v1/submited-all-assignment')
+            loader:()=>fetch('http://localhost:5000/api/v1/submited-all-assignment')
         },
         {
             path:'/login',

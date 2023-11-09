@@ -1,11 +1,11 @@
-import { useLoaderData } from "react-router-dom";
 import Banner from "../banner/Banner";
 import FeaturCards from "../featurCards/FeaturCards";
 import Qustion from "../Qustion/Qustion";
 import sideimg from '../../assets/section.jpg.png'
+import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-    const cards = useLoaderData();
+    const cards = useLoaderData()
     // console.log(cards);
     return (
         <div>

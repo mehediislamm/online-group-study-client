@@ -6,13 +6,15 @@ const SubmitedAssignment = () => {
     // console.log(assignments);
 
     const handelComplite = id=>{
+        
+        const object ={status:"complite"}
 
-        fetch(`https://online-group-study.vercel.app/api/v1/submited-all-assignment/${id}`,{
+        fetch(`http://localhost:5000/api/v1/submited-all-assignment/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type':'application/json'
             },
-            body: JSON.stringify({status:'complite'})
+            body: JSON.stringify(object)
         })
         .then(res=>res.json())
         .then(data => {

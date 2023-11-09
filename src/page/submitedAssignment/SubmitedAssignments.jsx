@@ -6,7 +6,8 @@ const SubmitedAssignments = ({ assignment,handelComplite }) => {
     
     const { _id, status,title , name , marks } = assignment;
     return (
-        <div className="bg-green-400">
+        <div className="bg-green-400
+        ">
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

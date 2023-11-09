@@ -7,7 +7,7 @@ const AssignmentCards = ({ allAssignment, update, setUpdate }) => {
     const handleDelete = (_id) => {
 
 
-        fetch(`https://online-group-study.vercel.app/api/v1/all-assignment/${_id}`, {
+        fetch(`http://localhost:5000/api/v1/all-assignment/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
