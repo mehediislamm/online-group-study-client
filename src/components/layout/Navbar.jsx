@@ -38,7 +38,7 @@ const Navbar = () => {
         user?  <li><NavLink to={'/myassignment'}>My Assignment</NavLink></li>:  <li className="hidden"><NavLink to={'/myassignment'}>My Assignment</NavLink></li>
        }
         {
-            user? <li><NavLink to={'/submittedassignment'}> Submitted Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/submittedassignment'}> Submitted Assignments</NavLink></li>
+            user? <li><NavLink to={`/submittedassignment`}> Submitted Assignments</NavLink></li>: <li className="hidden"><NavLink to={'/submittedassignment'}> Submitted Assignments</NavLink></li>
         }
 
     </>
@@ -70,11 +70,11 @@ const Navbar = () => {
 
                 </label>
                     {
-                        user ? <h1 className="font-bold">{user.displayName}</h1>: null
+                        user ? <h1 className="font-bold text-red-500">{user.displayName}</h1>: null
                     }
 
                 {
-                    user ? <button onClick={handleSignOut} className="btn"> Sign Out </button> :
+                    user ? <button onClick={handleSignOut} className="btn btn-error text-white"> Sign Out </button> :
                         <Link to="/login">
                             <button className="btn">Login</button>
                         </Link>

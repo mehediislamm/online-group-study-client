@@ -8,7 +8,7 @@ const Assignments = () => {
 
    
     
-    const url = `http://localhost:5000/api/v1/all-assignment`
+    const url = `https://online-group-study.vercel.app/api/v1/all-assignment`
     useEffect(()=>{
 
        axios.get(url, )

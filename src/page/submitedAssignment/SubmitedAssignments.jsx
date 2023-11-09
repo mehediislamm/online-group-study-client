@@ -29,16 +29,16 @@ const SubmitedAssignments = ({ assignment,handelComplite }) => {
                                 <div className="flex items-center space-x-3">
                                    
                                     <div>
-                                        <div className="font-bold text-blace font-mono ">{name}</div>
+                                        <div className="font-bold text-blace font-mono text-red-500">{name}</div>
                                         
                                     </div>
                                 </div>
                             </td>
-                            <td className="font-bold  font-mono ">
+                            <td className="font-bold  font-mono text-red-500">
                                {title}
                             </td>
-                            <td className="font-bold  font-mono ">{status}</td>
-                            <td className="font-bold  font-mono ">{marks}</td>
+                            <td className="font-bold  font-mono text-red-500">{status}</td>
+                            <td className="font-bold  font-mono text-red-500">{marks}</td>
                             <th>
                                 <button onClick={()=>handelComplite(_id)} className="btn btn-primary btn-sm">give marks</button>
                             </th>

@@ -18,7 +18,7 @@ const CreateAssignment = () => {
             title, description, marks, image, level,email
         }
 
-        fetch("http://localhost:5000/api/v1/create-assignments", {
+        fetch("https://online-group-study.vercel.app/api/v1/create-assignments", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,10 @@ const CreateAssignment = () => {
                     {/* form title and description */}
                     <div className="md:flex mb-8 gap-5">
 
-                        <div className="form-control md:w-1/2 ">
+                        <div className="form-control md:w-1/2 "
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom"
+                        >
                             <label className="label">
                                 <span className="label-text">Title</span>
                             </label>
@@ -52,7 +55,8 @@ const CreateAssignment = () => {
                                 <input type="text" name="title"  placeholder="title" className="input w-full input-bordered" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2">
+                        <div className="form-control md:w-1/2" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
                             <label className="label">
                                 <span className="label-text">description</span>
                             </label>
@@ -63,7 +67,10 @@ const CreateAssignment = () => {
                     </div>
 
                     {/* form marks and thumbnail row */}
-                    <div className="md:flex gap-5 mb-4">
+                    <div className="md:flex gap-5 mb-4"
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    >
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Marks</span>
@@ -84,7 +91,10 @@ const CreateAssignment = () => {
                     </div>
 
                     {/* form Type and Price row */}
-                    <div className="md:flex gap-5 mb-6 ">
+                    <div className="md:flex gap-5 mb-6 "
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom"
+                    >
                         <div className="form-control md:w-1/2">
                             <label className="label">
                                 <span className="label-text">Difficulty level</span>

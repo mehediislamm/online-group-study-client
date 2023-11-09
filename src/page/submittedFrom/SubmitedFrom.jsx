@@ -23,7 +23,7 @@ const SubmitedFrom = () => {
             status, pdf, textarea, email, name, title, marks
         }
        
-        fetch('http://localhost:5000/api/v1/submited-assignments', {
+        fetch('https://online-group-study.vercel.app/api/v1/submited-assignments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
